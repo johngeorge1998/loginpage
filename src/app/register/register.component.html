@@ -1,0 +1,48 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-3 text-center">
+  
+              <div class="mb-md-5 mt-md-6 pb-4">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+
+                <form [formGroup]="registerForm">
+  
+                <div class="form-outline form-white mb-6">
+                  <label class="form-label" for="typeName">Name</label>
+                  <input formControlName="uname" type="name" id="typeName" class="form-control form-control-lg" />
+                </div>
+                <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" style="color: red;">Invalid Username</div>
+
+                <div class="form-outline form-white mb-6">
+                  <label class="form-label" for="typeName">Email Id</label>
+                  <input formControlName="email" type="email" id="email1" class="form-control form-control-lg" />
+                </div>
+                <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" style="color: red;">Invalid Emai Id</div>
+
+  
+                <div class="form-outline form-white mb-6">
+                  <label class="form-label" for="pswd1">Password</label>
+                  <input formControlName="pswd" type="password" id="pswd1" class="form-control form-control-lg" />
+                </div>
+                <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" style="color: red;">Invalid Password</div>
+
+  
+                <button class="btn btn-outline-light btn-lg px-5" (click)="register()" type="submit">Register</button>
+              </form>
+  
+              </div>
+
+              <div class="text-center fs-8">
+                <a routerLink="">Sign in</a>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
